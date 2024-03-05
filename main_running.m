@@ -9,7 +9,7 @@ addpath(('D:\Tracking\vlfeat-0.9.21\toolbox'));
 vl_setup
 
 addpath(('./rstEval'));
-addpath(['./trackers/CCOT'])
+addpath(['./trackers/SRDCF'])
 
 seqs=configSeqs;
 

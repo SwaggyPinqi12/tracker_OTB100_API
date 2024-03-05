@@ -1,43 +1,40 @@
-This code library is for research purpose only.
-We distribute our library under the GNU-GPL license.
-If you use this library or the dataset, please cite our paper:
-[1] Y. Wu, J. Lim, and M.-H. Yang, “Online Object Tracking: A Benchmark,” in CVPR, 2013.
+# OTB100工具箱入门
+## 基础教程
+```
+https://blog.csdn.net/Hankerchen/article/details/119908703
+```
 
-The project website is http://visual-tracking.net/ and the library will be updated on it.
- 
-The information for trackers is listed in the file Trackers.txt.
+## 已适配算法
+1. DCF/KCF
+2. BACF
+3. C-COT
+4. ECO
+5. CFLB
 
-The notes for the folders:
-* All the tracking results used in [1] are stored in the folders '.\results\results_SRE_CVPR13' and '.\results\results_TRE_CVPR13'.
-* The annotation files (bounding box and attributes) are in the folder '.\anno'.
-* The folder '.\initOmit' contains the annotation of frames that are omitted for tracking initialization due to occlusion or out of view of targets.
-* The tracking results will be stored in the folder '.\results'.
-* The folder '.\rstEval' contains some scripts used to compute the tracking performance or draw the results.
-* The folder '.\trackers' contains all the code for trackers
-* The folder '.\tmp' is used to store some temporary results or log files.
-* The folder '.\util' ontains some scripts used in the main functions.
+## 基础算法
+* DCF算法，tracker_release.zip
+```
+代码和CSK一模一样，不知道对不对
+```
+* KCF算法， tracker_release2.zip，https://www.robots.ox.ac.uk/~joao/#research， High-speed tracking with kernelized correlation filters
+```
+https://www.twblogs.net/a/5b8aefa12b71773b27c9fa81
+```
 
-1.Setup for trackers
-	*platform: Windows
-	*the 5 vivid trackers and TLD can only run on 32 bit Matlab
-	*ASLA depends on vlfeat
-	*BSBT, BT, SBT, CPF, Frag, KMS, SMS depend on opencv 1.0
-	*MIL depends on IPP 5.0 and opencv 1.0
-	*Struck depends on opencv 1.0 and Eigen library
-	*LSK depends on MATLAB Compiler Runtime (MCR) 7.16
-		location: <matlabroot>\toolbox\compiler\deploy\win32\MCRInstaller.exe
-	*CXT depends on opencv 2.4 and the DLLS are included
-	*VTD and VTS have GUI so that they cannot be included in our library
-2.main functions
-	* main_running.m is the main function for the tracking test
-		- Note that OPE is the first trial of TRE 
-		- It also has the function to validate the results.
-	* perfPlot.m is the main function for drawing performance plots.
-		- It will call 'genPerfMat.m' to generate the values for plots.
-	* drawResultBB.m is the main function for drawing bounding boxes (BBs) of different trackers on each frame	
-	
-	
-	
-Yi Wu, Jongwoo Lim and Ming-Hsuan Yang, June 2013
-
-Last updated, Jun 02, 2013
+## 进阶算法
+* BACF，https://github.com/hamedkiani/BACF-tracking
+```
+https://blog.csdn.net/qq_45591903/article/details/103252979
+```
+* C-COT，https://github.com/martin-danelljan/Continuous-ConvOp
+```
+环境和ECO一样，没法用git补库，直接贴过去。https://codeleading.com/article/89894717389/
+```
+* ECO，https://github.com/martin-danelljan/ECO
+```
+https://www.twblogs.net/a/5b8aefa22b71773b27c9fa8a
+```
+* CFLB，https://github.com/JHvisionchen/CFLB-matlab
+```
+这个网上资料少，自己改了个API
+```
